@@ -70,7 +70,7 @@ namespace DocxWordSearcher
             this.labelOutput.AutoSize = true;
             this.labelOutput.BackColor = System.Drawing.SystemColors.Control;
             this.labelOutput.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelOutput.Location = new System.Drawing.Point(50, 65);
+            this.labelOutput.Location = new System.Drawing.Point(42, 23);
             this.labelOutput.Name = "labelOutput";
             this.labelOutput.Size = new System.Drawing.Size(247, 18);
             this.labelOutput.TabIndex = 3;
