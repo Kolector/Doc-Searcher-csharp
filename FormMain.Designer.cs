@@ -39,6 +39,7 @@ namespace DocxWordSearcher
             this.listBoxFolder = new System.Windows.Forms.ListBox();
             this.listBoxFiles = new System.Windows.Forms.ListBox();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.checkBoxRecursiveSearch = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonDirectoryPicker
@@ -85,7 +86,7 @@ namespace DocxWordSearcher
             // buttonSearch
             // 
             this.buttonSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearch.Location = new System.Drawing.Point(4, 447);
+            this.buttonSearch.Location = new System.Drawing.Point(4, 474);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(381, 52);
             this.buttonSearch.TabIndex = 4;
@@ -131,12 +132,24 @@ namespace DocxWordSearcher
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // checkBoxRecursiveSearch
+            // 
+            this.checkBoxRecursiveSearch.AutoSize = true;
+            this.checkBoxRecursiveSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxRecursiveSearch.Location = new System.Drawing.Point(4, 445);
+            this.checkBoxRecursiveSearch.Name = "checkBoxRecursiveSearch";
+            this.checkBoxRecursiveSearch.Size = new System.Drawing.Size(170, 23);
+            this.checkBoxRecursiveSearch.TabIndex = 10;
+            this.checkBoxRecursiveSearch.Text = "Рекурсивный поиск";
+            this.checkBoxRecursiveSearch.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(388, 503);
+            this.ClientSize = new System.Drawing.Size(388, 534);
+            this.Controls.Add(this.checkBoxRecursiveSearch);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.listBoxFolder);
@@ -165,6 +178,7 @@ namespace DocxWordSearcher
         private System.Windows.Forms.ListBox listBoxFolder;
         private System.Windows.Forms.ListBox listBoxFiles;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.CheckBox checkBoxRecursiveSearch;
     }
 }
 

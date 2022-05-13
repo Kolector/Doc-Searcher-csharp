@@ -57,6 +57,38 @@ namespace DocxWordSearcher
                 MessageBox.Show("Введите текст для поиска.");
         }
 
+        private void FindWordsRecursive() //TODO: ПРОТЕСТИРОВАТЬ РАЗРАБОТАННЫЕ ФУНКЦИИ ПО РЕКУРСИВНОМУ ПОИСКУ
+        {
+            if (textBox_searchCriteria.Text != "")
+            {
+
+                string Path = textBoxPath.Text;
+
+                File.SetAttributes(Path, FileAttributes.Normal);
+                //TODO: исследовать способы вывода строковых данных
+
+                string WholeThing = "";
+
+                Console.WriteLine("_______________________________________");
+                List<string> FoundInFiles = DocxSearch.RecursiveSearch(Path, textBox_searchCriteria.Text);
+                FoundInFiles.ForEach(p => Console.WriteLine(p + " " + "!!!"));
+                Console.WriteLine("_______________________________________");
+
+                foreach (string matchingFiles in DocxSearch.FindKeywordInDir(textBox_searchCriteria.Text, Path, true))
+                {
+                    WholeThing += matchingFiles;
+                    WholeThing += "\n";
+                }
+
+                string ResultInTxtPath = Path + "\\Результат поиска.txt";
+
+                File.WriteAllText(ResultInTxtPath, WholeThing);
+
+            }
+            else
+                MessageBox.Show("Введите текст для поиска.");
+        }
+
         private void FolderBrowser(string path)
         {
             DirectoryInfo ThisDirectory = new DirectoryInfo(path);
@@ -98,7 +130,10 @@ namespace DocxWordSearcher
 
         private void buttonSearch_click(object sender, EventArgs e)
         {
-            FindWords();
+            if (checkBoxRecursiveSearch.Checked == true)
+                FindWordsRecursive();
+            else
+                FindWords();
         }
 
         private void listBoxFiles_DoubleClick(object sender, EventArgs e)
@@ -110,7 +145,8 @@ namespace DocxWordSearcher
                     if (MessageBox.Show("Искомое слово найдено. Открыть файл?", "Результат поиска", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                         //file.Open(FileMode.Open);
-                        WordprocessingDocument.Open(file.FullName, true);
+                       // WordprocessingDocument.Open(file.FullName, true);
+                        System.Diagnostics.Process.Start(file.FullName);
                         string path = file.FullName.ToString();
                     }
                         
@@ -121,8 +157,7 @@ namespace DocxWordSearcher
 
 
         }
-
-        private void buttonBack_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e) //TODO: Имплементировать возврат по директории
         {
 
         }
