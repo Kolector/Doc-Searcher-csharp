@@ -19,12 +19,10 @@ namespace DocxWordSearcher
         {
             InitializeComponent();
         }
-
         private void FindWordInFile()
         {
 
         }
-
         private void FindWords()
         {
             if (textBox_searchCriteria.Text != "")
@@ -56,7 +54,6 @@ namespace DocxWordSearcher
             else
                 MessageBox.Show("Введите текст для поиска.");
         }
-
         private void FindWordsRecursive() //TODO: ПРОТЕСТИРОВАТЬ РАЗРАБОТАННЫЕ ФУНКЦИИ ПО РЕКУРСИВНОМУ ПОИСКУ
         {
             if (textBox_searchCriteria.Text != "")
@@ -88,7 +85,6 @@ namespace DocxWordSearcher
             else
                 MessageBox.Show("Введите текст для поиска.");
         }
-
         private void FolderBrowser(string path)
         {
             DirectoryInfo ThisDirectory = new DirectoryInfo(path);
@@ -110,7 +106,6 @@ namespace DocxWordSearcher
 
             textBoxPath.Text = ThisDirectory.FullName;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (DocxFolderBrowser.ShowDialog() == DialogResult.OK)
@@ -127,7 +122,6 @@ namespace DocxWordSearcher
             DirectoryInfo DirectoryChosen = new DirectoryInfo(textBoxPath.Text + "\\" + listBoxFolder.SelectedItem.ToString());
             FolderBrowser(DirectoryChosen.FullName);
         }
-
         private void buttonSearch_click(object sender, EventArgs e)
         {
             if (checkBoxRecursiveSearch.Checked == true)
@@ -135,7 +129,6 @@ namespace DocxWordSearcher
             else
                 FindWords();
         }
-
         private void listBoxFiles_DoubleClick(object sender, EventArgs e)
         {
             FileInfo file = new FileInfo(textBoxPath.Text + "\\" + listBoxFiles.SelectedItem.ToString());
@@ -154,8 +147,6 @@ namespace DocxWordSearcher
                         MessageBox.Show("Слово не найдено.", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 else
                     MessageBox.Show("Файл несуществует, зафиксируйте ошибку в каком-либо документе для разработчика.", "Ошибка обращения к файлу", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
         }
         private void buttonBack_Click(object sender, EventArgs e) //TODO: Имплементировать возврат по директории
         {

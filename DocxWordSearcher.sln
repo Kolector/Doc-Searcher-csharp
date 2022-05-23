@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocxSearchExample", "..\Doc
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupWithNetPackage", "..\SetupWithNetPackage\SetupWithNetPackage.vdproj", "{6414F431-95D7-4E47-889F-900B6F8DBF34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocxSearchTest", "..\DocxSearchTest\DocxSearchTest.csproj", "{1B68707E-026A-4269-A590-EBE20220D0CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{52198E2D-F611-47E7-8311-0A0B56B2CA2F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6414F431-95D7-4E47-889F-900B6F8DBF34}.Debug|Any CPU.ActiveCfg = Debug
 		{6414F431-95D7-4E47-889F-900B6F8DBF34}.Release|Any CPU.ActiveCfg = Release
+		{1B68707E-026A-4269-A590-EBE20220D0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B68707E-026A-4269-A590-EBE20220D0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B68707E-026A-4269-A590-EBE20220D0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B68707E-026A-4269-A590-EBE20220D0CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
